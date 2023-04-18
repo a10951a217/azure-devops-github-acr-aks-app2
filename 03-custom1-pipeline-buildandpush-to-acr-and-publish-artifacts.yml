@@ -49,6 +49,7 @@ stages:
         Contents: '**'
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
         OverWrite: true
+    - bash: echo After copying to build artifact directory; ls -R $(Build.ArtifactStagingDirectory)   
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
